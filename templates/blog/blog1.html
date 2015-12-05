@@ -1,0 +1,20 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles/blog_page.css"></link>
+</head>
+
+<body>
+	{% if posts %}
+	{% for apost in posts %}
+    <div class="post">
+        <div class="post-subject"><a href="http://peer-resolutions.appspot.com/blog?permalink={{apost.permalink}}">{{apost.subject}}</a>   |  Date created:{{apost.created}}</div>
+        <hr>
+        <pre class="post-body">{{apost.content}}</pre>
+    </div>
+  
+    {% endfor %}
+    {% endif %}
+    {% if not posts %}
+    <div class="nodata">  </div>
+    {% endif %}
+</body>

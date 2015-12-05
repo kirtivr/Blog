@@ -1,0 +1,19 @@
+application: peer-resolutions
+version: 3
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:                                                                      
+- name: jinja2                                                                  
+  version: latest                                                               
+- name: markupsafe                                                              
+  version: latest
+  
+handlers:
+- url: /styles
+  static_dir: styles
+  
+
+- url: /.*
+  script: home.app
